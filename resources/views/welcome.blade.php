@@ -30,13 +30,13 @@
                 @foreach ($cocktails as $cocktail)
                     <tr>
                         <td>{{ $cocktail['cocktail_name'] }}</td>
-                        <td>{{ $cocktail['abv'] }} %</td>
+                        <td class="w-25">{{ $cocktail['abv'] }} %</td>
                         @if ($cocktail['is_alcoholic'] === 1)
                             <td>Yes</td>
                         @else
                             <td>No</td>
                         @endif
-                        <td>$ {{ $cocktail['price'] }}</td>
+                        <td class="w-25">$ {{ $cocktail['price'] }}</td>
                         <td>{{ $cocktail['description'] }}</td>
                         <td>{{ $cocktail['original_country'] }}</td>
                     </tr>
