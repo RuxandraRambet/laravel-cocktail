@@ -41,7 +41,12 @@
                         <td>$ {{ $cocktail['price'] }}</td>
                         <td>{{ $cocktail['description'] }}</td>
                         <td>{{ $cocktail['original_country'] }}</td>
-                        <td><a class="btn btn-primary" href="{{ route('cocktails.show', $cocktail) }}">Show</a></td>
+                        <td>
+                            <div class="d-flex">
+                                <a class="btn btn-primary" href="{{ route('cocktails.show', $cocktail) }}">Show</a>
+                                <a class="btn btn-warning" href="{{ route('cocktails.edit', $cocktail) }}">Edit</a>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
