@@ -35,7 +35,7 @@ class CocktailController extends Controller
         $cocktail = new Cocktail();
         $cocktail->cocktail_name = $data['cocktail_name'];
         $cocktail->abv = $data['abv'];
-        $cocktail->is_alcoholic= $data['is_alcoholic'];
+        $cocktail->is_alcoholic = $data['is_alcoholic'];
         $cocktail->price = $data['price'];
         $cocktail->description = $data['description'];
         $cocktail->original_country = $data['original_country'];
@@ -48,9 +48,9 @@ class CocktailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Cocktail $cocktail)
     {
-        //
+        return view('cocktails.show', compact('cocktail'));
     }
 
     /**
