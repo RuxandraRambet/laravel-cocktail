@@ -45,6 +45,11 @@
                             <div class="d-flex">
                                 <a class="btn btn-primary" href="{{ route('cocktails.show', $cocktail) }}">Show</a>
                                 <a class="btn btn-warning" href="{{ route('cocktails.edit', $cocktail) }}">Edit</a>
+                                <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" value="delete">
+                                </form>
                             </div>
                         </td>
                     </tr>
