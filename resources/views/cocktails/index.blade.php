@@ -48,7 +48,7 @@
                                 <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" value="delete">
+                                    <input type="submit" value="delete" class="btn btn-danger">
                                 </form>
                             </div>
                         </td>
