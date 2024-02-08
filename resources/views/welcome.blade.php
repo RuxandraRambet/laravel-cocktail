@@ -27,6 +27,8 @@
                 </tr>
             </thead>
             <tbody>
+
+                
                 @foreach ($cocktails as $cocktail)
                     <tr>
                         <td>{{ $cocktail['cocktail_name'] }}</td>
