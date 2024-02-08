@@ -12,6 +12,7 @@
     <body>
         <header class="text-center">
             <h1>Cocktails</h1>
+            <a href="{{ route('cocktails.create') }}" class="btn btn-light">Create a New Cocktail</a>
         </header>
         <div class="container mb-5">
             <h2>Complete List of All Cocktails</h2>
