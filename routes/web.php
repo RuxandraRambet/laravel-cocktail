@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\CocktailController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,8 @@ use App\Http\Controllers\Guest\PageController;
 |
 */
 
-Route::get('/', [PageController::class,'index']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::resource('cocktails', CocktailController::class);
