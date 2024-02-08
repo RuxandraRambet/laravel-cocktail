@@ -8,3 +8,7 @@
    Ogni membro del team deve contribuire allo svolgimento dell'esercizio utilizzando git
    (pull, branch, merge, push).
    Un membro del team crea la repo e poi invita gli altri membri come collaboratori.
+
+### 08-02-2024
+
+1. Creazione delle CRUD (CREATE-EDIT-SHOW-DELETE)
