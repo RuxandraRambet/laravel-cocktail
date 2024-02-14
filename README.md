@@ -17,7 +17,7 @@
 
 -   [x] creare la migration per la tabella degli ingredienti
 -   [x] creare il rispettivo model
--   [] creare la migration per la tabella pivot
+-   [x] creare la migration per la tabella pivot
 -   [] aggiungere ai model la relazione many to many
 -   [] visualizzare nella pagina di dettaglio di un cocktail gli ingredienti se presenti
 -   [] permettere all’utente di associare gli ingredienti nella pagina di creazione e modifica di un cocktail
