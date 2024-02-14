@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cocktail_ingredient', function (Blueprint $table) {
-            $table->id();
+            //create foreign keys
+            $table->foreignId('cocktail_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('ingredient_id')->constrained()->cascadeOnDelete();
+            //create primary key
+            $table->primary(['cocktail_id', 'ingredient_id']);
             $table->timestamps();
         });
     }
