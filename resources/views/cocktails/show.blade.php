@@ -20,6 +20,17 @@
                 <div class="card-title">
                     <h2>{{ $cocktail['cocktail_name'] }}</h2>
                 </div>
+                @if (count($cocktail->ingredients))
+                    <div class="ingredients">
+                        @foreach ($cocktail->ingredients as $ingredient)
+                            <span class="badge bg-secondary">{{ $ingredient->name }}</span>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="ingredients">
+                        <span class="badge bg-secondary">No ingredients</span>
+                    </div>
+                @endif
                 <p>{{ $cocktail['abv'] }}</p>
                 <hr>
                 <p>{{ $cocktail['is_alcoholic'] }}</p>
