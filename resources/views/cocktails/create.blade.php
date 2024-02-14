@@ -37,6 +37,21 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
             </div>
             <div class="col-12">
+                <label class="form-label">Ingredienti</label>
+                <div>
+                    @foreach ($ingredients as $ingredient)
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="check-{{ $ingredient->slug }}"
+                                value="{{ $ingredient->id }}" name="ingredients[]"
+                                {{ in_array($ingredient->id, old('ingredients', [])) ? 'checked' : '' }}>
+                            <label class="form-check-label" for="check-{{ $ingredient->slug }}">
+                                {{ $ingredient->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>

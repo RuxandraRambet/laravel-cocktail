@@ -20,6 +20,6 @@
 -   [x] creare la migration per la tabella pivot
 -   [x] aggiungere ai model la relazione many to many
 -   [x] visualizzare nella pagina di dettaglio di un cocktail gli ingredienti se presenti
--   [] permettere all’utente di associare gli ingredienti nella pagina di creazione e modifica di un cocktail
+-   [x] permettere all’utente di associare gli ingredienti nella pagina di creazione e modifica di un cocktail
 
     Bonus : Aggiungere le operazioni CRUD per il model degli ingredienti.

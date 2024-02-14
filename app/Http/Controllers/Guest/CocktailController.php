@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use App\Models\Cocktail;
 use Illuminate\Http\Request;
+use App\Models\Ingredient;
 
 class CocktailController extends Controller
 {
@@ -22,7 +23,9 @@ class CocktailController extends Controller
      */
     public function create()
     {
-        return view('cocktails.create');
+        $ingredients = Ingredient::all();
+
+        return view('cocktails.create' , compact('ingredients'));
     }
 
     /**
@@ -58,7 +61,8 @@ class CocktailController extends Controller
      */
     public function edit(Cocktail $cocktail)
     {
-        return view('cocktails.edit', compact('cocktail'));
+        $ingredients = Ingredient::all();
+        return view('cocktails.edit', compact('cocktail', 'ingredients'));
     }
 
     /**
