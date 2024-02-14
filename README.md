@@ -12,3 +12,14 @@
 ### 08-02-2024
 
 1. Creazione delle CRUD (CREATE-EDIT-SHOW-DELETE)
+
+### 14-02-2024
+
+-   [] creare la migration per la tabella degli ingredienti
+-   [] creare il il rispettivo model
+-   [] creare la migration per la tabella pivot
+-   [] aggiungere ai model la relazione many to many
+-   [] visualizzare nella pagina di dettaglio di un cocktail gli ingredienti se presenti
+-   [] permettere all’utente di associare gli ingredienti nella pagina di creazione e modifica di un cocktail
+
+    Bonus : Aggiungere le operazioni CRUD per il model degli ingredienti.
