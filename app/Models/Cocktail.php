@@ -9,7 +9,7 @@ class Cocktail extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['ingredients'];
 
     public function ingredients()
     {

@@ -25,7 +25,7 @@ class CocktailController extends Controller
     {
         $ingredients = Ingredient::all();
 
-        return view('cocktails.create' , compact('ingredients'));
+        return view('cocktails.create', compact('ingredients'));
     }
 
     /**
@@ -38,12 +38,16 @@ class CocktailController extends Controller
         $cocktail = new Cocktail();
         $cocktail->cocktail_name = $data['cocktail_name'];
         $cocktail->abv = $data['abv'];
-        $cocktail->is_alcoholic = $data['is_alcoholic'];
+        // $cocktail->is_alcoholic = $data['is_alcoholic'];
         $cocktail->price = $data['price'];
         $cocktail->description = $data['description'];
         $cocktail->original_country = $data['original_country'];
 
         $cocktail->save();
+
+        if (isset($data['ingredients'])) {
+            $cocktail->ingredients()->sync($data['ingredients']);
+        }
 
         return redirect()->route('cocktails.show', $cocktail->id);
     }
@@ -71,7 +75,19 @@ class CocktailController extends Controller
     public function update(Request $request, Cocktail $cocktail)
     {
         $data = $request->all();
+
+        $cocktail->cocktail_name = $data['cocktail_name'];
+        $cocktail->abv = $data['abv'];
+        $cocktail->price = $data['price'];
+        $cocktail->description = $data['description'];
+        $cocktail->original_country = $data['original_country'];
+        if (isset($data['ingredients'])) {
+            $cocktail->ingredients()->sync($data['ingredients']);
+        } else {
+            $cocktail->ingredients()->sync([]);
+        }
         $cocktail->update($data);
+
         return redirect()->route('cocktails.show', $cocktail->id);
     }
 
@@ -80,6 +96,7 @@ class CocktailController extends Controller
      */
     public function destroy(Cocktail $cocktail)
     {
+        $cocktail->ingredients()->detach();
         $cocktail->delete();
         return redirect()->route('cocktails.index');
     }
