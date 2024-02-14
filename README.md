@@ -15,7 +15,7 @@
 
 ### 14-02-2024
 
--   [] creare la migration per la tabella degli ingredienti
+-   [x] creare la migration per la tabella degli ingredienti
 -   [] creare il il rispettivo model
 -   [] creare la migration per la tabella pivot
 -   [] aggiungere ai model la relazione many to many
