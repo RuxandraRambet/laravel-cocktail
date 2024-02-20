@@ -12,24 +12,26 @@
 <body>
     <div class="container my-5">
         <h1>Create New Ingredient</h1>
-        <form class="row g-3" action="{{ route('ingredients.store') }}" method="POST">
+        <form class="row g-3" action="{{ route('ingredients.update', $ingredient) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="col-md-6">
                 <label for="ingredient" class="form-label">Ingredient Name</label>
-                <input type="text" class="form-control" id="ingredient" name="name">
+                <input type="text" class="form-control" id="ingredient" name="name"
+                    value="{{ old('name', $ingredient) }}">
             </div>
             <div class="col-md-6">
                 <h6>Ingredient ABV</h6>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="is_alcoholic" id="flexRadioDefault1"
-                        value="1">
+                        value="1" {{ old('is_alcoholic', $ingredient) == '1' ? 'checked' : '' }}>
                     <label class="form-check-label" for="flexRadioDefault1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="is_alcoholic" id="flexRadioDefault2"
-                        value="0" checked>
+                        value="0" {{ old('is_alcoholic', $ingredient) == '0' ? 'checked' : '' }}>
                     <label class="form-check-label" for="flexRadioDefault2">
                         No
                     </label>

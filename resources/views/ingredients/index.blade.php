@@ -36,6 +36,8 @@
                         <td>
                             <div class="d-flex">
                                 <a class="btn btn-primary" href="{{ route('ingredients.show', $ingredient) }}">Show</a>
+                                <a class="btn btn-secondary"
+                                    href="{{ route('ingredients.edit', $ingredient) }}">Edit</a>
                                 {{-- <a class="btn btn-warning" href="{{ route('cocktails.edit', $cocktail) }}">Edit</a>
                                 <form action="{{ route('ingredients.destroy', $ingredient->id) }}" method="POST">
                                     @csrf

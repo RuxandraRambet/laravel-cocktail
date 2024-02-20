@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreIngredientRequest;
+use App\Http\Requests\UpdateIngredientsRequest;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -32,6 +33,7 @@ class IngredientController extends Controller
      */
     public function store(StoreIngredientRequest $request)
     {
+
         $data = $request->validated();
         $new_ingredient = new Ingredient();
         $new_ingredient->name = $data['name'];
@@ -52,17 +54,22 @@ class IngredientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Ingredient $ingredient)
     {
-        //
+        return view('ingredients.edit', compact('ingredient'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateIngredientsRequest $request, Ingredient $ingredient)
     {
-        //
+        $data = $request->validated();
+        $ingredient->slug = Str::slug($ingredient->name);
+
+        $ingredient->update($data);
+
+        return redirect()->route('ingredients.show', compact('ingredient'));
     }
 
     /**
