@@ -34,16 +34,15 @@
                             <td>No</td>
                         @endif
                         <td>
-                            <div class="d-flex">
+                            <div class="d-flex gap-2">
                                 <a class="btn btn-primary" href="{{ route('ingredients.show', $ingredient) }}">Show</a>
                                 <a class="btn btn-secondary"
                                     href="{{ route('ingredients.edit', $ingredient) }}">Edit</a>
-                                {{-- <a class="btn btn-warning" href="{{ route('cocktails.edit', $cocktail) }}">Edit</a>
-                                <form action="{{ route('ingredients.destroy', $ingredient->id) }}" method="POST">
+                                <form action="{{ route('ingredients.destroy', $ingredient) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" value="delete" class="btn btn-danger">
-                                </form> --}}
+                                    <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
                             </div>
                         </td>
                     </tr>
