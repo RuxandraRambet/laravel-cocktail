@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guest\CocktailController;
+use App\Http\Controllers\Guest\IngredientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('cocktails', CocktailController::class);
+Route::resource('ingredients', IngredientController::class);
