@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('cocktails', CocktailController::class);
-Route::resource('ingredients', IngredientController::class);
+Route::resource('ingredients', IngredientController::class)->parameters(['ingredients' => 'ingredient:slug']);
